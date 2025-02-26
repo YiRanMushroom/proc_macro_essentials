@@ -5,7 +5,7 @@ pub use syn;
 pub mod utils {
     use super::*;
     use proc_macro_crate::*;
-    fn get_call_site_crate_name(original_name: &str) -> proc_macro2::TokenStream {
+    pub fn get_call_site_crate_name(original_name: &str) -> proc_macro2::TokenStream {
         proc_macro2::TokenStream::from(
             match crate_name(original_name)
                 .expect(format!("{} must be present in Cargo.toml", original_name).as_str())
